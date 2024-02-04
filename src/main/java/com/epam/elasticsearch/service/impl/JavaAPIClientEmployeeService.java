@@ -1,4 +1,4 @@
-package com.epam.elasticsearch.task3.service.impl;
+package com.epam.elasticsearch.service.impl;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.aggregations.AvgAggregate;
@@ -13,8 +13,8 @@ import co.elastic.clients.elasticsearch.core.search.Hit;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.ElasticsearchTransport;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
-import com.epam.elasticsearch.task3.dto.Employee;
-import com.epam.elasticsearch.task3.service.EmployeeService;
+import com.epam.elasticsearch.dto.Employee;
+import com.epam.elasticsearch.service.EmployeeService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.elasticsearch.client.RestClient;
 import org.springframework.context.annotation.Profile;

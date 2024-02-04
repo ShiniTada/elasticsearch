@@ -1,4 +1,4 @@
-package com.epam.elasticsearch.task3.dto;
+package com.epam.elasticsearch.dto;
 
 public record Address(String country, String town) {
 }

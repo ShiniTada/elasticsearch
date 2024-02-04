@@ -1,7 +1,7 @@
-package com.epam.elasticsearch.task3.controller;
+package com.epam.elasticsearch.controller;
 
-import com.epam.elasticsearch.task3.dto.Employee;
-import com.epam.elasticsearch.task3.service.EmployeeService;
+import com.epam.elasticsearch.dto.Employee;
+import com.epam.elasticsearch.service.EmployeeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Qualifier;

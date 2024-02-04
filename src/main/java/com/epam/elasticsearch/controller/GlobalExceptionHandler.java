@@ -1,7 +1,6 @@
-package com.epam.elasticsearch.task3.controller;
+package com.epam.elasticsearch.controller;
 
-import com.epam.elasticsearch.task3.dto.CustomError;
-import com.epam.elasticsearch.task3.service.impl.LowLevelRestClientEmployeeService;
+import com.epam.elasticsearch.dto.CustomError;
 import org.apache.http.StatusLine;
 import org.elasticsearch.client.ResponseException;
 import org.slf4j.Logger;

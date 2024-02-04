@@ -1,4 +1,4 @@
-package com.epam.elasticsearch.task3.dto;
+package com.epam.elasticsearch.dto;
 
 import org.springframework.http.HttpStatus;
 

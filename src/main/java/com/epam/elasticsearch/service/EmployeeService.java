@@ -1,7 +1,7 @@
-package com.epam.elasticsearch.task3.service;
+package com.epam.elasticsearch.service;
 
 
-import com.epam.elasticsearch.task3.dto.Employee;
+import com.epam.elasticsearch.dto.Employee;
 
 import java.io.IOException;
 import java.util.List;

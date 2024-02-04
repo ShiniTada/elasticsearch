@@ -1,7 +1,7 @@
-package com.epam.elasticsearch.task3.service.impl;
+package com.epam.elasticsearch.service.impl;
 
-import com.epam.elasticsearch.task3.dto.Employee;
-import com.epam.elasticsearch.task3.service.EmployeeService;
+import com.epam.elasticsearch.dto.Employee;
+import com.epam.elasticsearch.service.EmployeeService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -20,14 +20,14 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@Profile("task3")
-@RequestMapping(value = "/low-level-rest-client/employees")
-@Tag(name = "Task 3. Java Low Level REST Client")
-public class LowLevelRestClientEmployeeController {
+@Profile("task4")
+@RequestMapping(value = "/java-api-client/employees")
+@Tag(name = "Task 4. Java API Client")
+public class JavaAPIClientEmployeeController {
 
     private final EmployeeService service;
 
-    public LowLevelRestClientEmployeeController(@Qualifier("LowLevelRestClientEmployeeService") EmployeeService service) {
+    public JavaAPIClientEmployeeController(@Qualifier("JavaAPIClientEmployeeService") EmployeeService service) {
         this.service = service;
     }
 

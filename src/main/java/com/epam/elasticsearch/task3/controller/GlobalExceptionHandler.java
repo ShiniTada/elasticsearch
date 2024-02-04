@@ -1,7 +1,7 @@
 package com.epam.elasticsearch.task3.controller;
 
 import com.epam.elasticsearch.task3.dto.CustomError;
-import com.epam.elasticsearch.task3.service.impl.LowLevelRestClientEmployeeServiceImpl;
+import com.epam.elasticsearch.task3.service.impl.LowLevelRestClientEmployeeService;
 import org.apache.http.StatusLine;
 import org.elasticsearch.client.ResponseException;
 import org.slf4j.Logger;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    private final Logger logger = LoggerFactory.getLogger(LowLevelRestClientEmployeeServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(value = ResponseException.class)
     public ResponseEntity<Object> handleAllExceptions(ResponseException e) {
-        logger.warn("Warn: ", e);
         StatusLine statusLine = e.getResponse().getStatusLine();
+        logger.warn("Warn: ", statusLine);
         HttpStatus statusCode = HttpStatus.valueOf(statusLine.getStatusCode());
         CustomError error = new CustomError(statusCode, statusLine.getReasonPhrase());
         return new ResponseEntity<>(error, statusCode);

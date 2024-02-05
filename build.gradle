@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.epam'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+task buildTask3 {
+    project.ext.set("profile", "task3")
+}
+
+task buildTask4 {
+    project.ext.set("profile", "task4")
+}
+
+dependencies {
+    if (project.hasProperty("profile")) {
+        switch (project.getProperty("profile")) {
+            case "task3":
+                implementation 'org.elasticsearch.client:elasticsearch-rest-client:7.15.2'
+                break
+            case "task4":
+                implementation 'co.elastic.clients:elasticsearch-java:8.12.0'
+                break
+        }
+    } else {
+        throw new GradleException("You must specify active profile in application.properties.")
+    }
+
+    implementation 'org.springframework:spring-core'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
